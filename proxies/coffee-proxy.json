@@ -1,0 +1,14 @@
+{
+  "name": "CoffeeProxy",
+  "profile": "default",
+  "endpoints": [
+    {
+      "name": "default",
+      "basePath": "/coffeeservice",
+      "target": {
+        "name": "default",
+        "url": "https://coffee-service-utbzvczbya-ew.a.run.app"
+      }
+    }
+  ]
+}

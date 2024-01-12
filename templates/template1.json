@@ -1,0 +1,17 @@
+{
+    "name": "ACE-Testproxy",
+    "profile": "default",
+    "endpoints": [
+      {
+        "name": "default",
+        "basePath": "/httpbin",
+        "target": {
+          "name": "default",
+          "url": "https://httpbin.org"
+        },
+        "spikeArrest": {
+          "rate": "30ps"
+        }
+      }
+    ]
+  }
