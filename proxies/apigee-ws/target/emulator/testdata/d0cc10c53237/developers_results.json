@@ -1,0 +1,32 @@
+[
+  {
+    "developerId": "54cde165-5c66-4f1d-87e6-612474a62df2",
+    "userName": "tayers",
+    "firstName": "Tyler",
+    "lastName": "Ayers",
+    "email": "tyler.ayers@gmail.com",
+    "status": "active",
+    "attributes": [
+      {
+        "name": "sample_attribute_0",
+        "value": "sample_attribute_value_0"
+      }
+    ],
+    "apps": []
+  },
+  {
+    "developerId": "cd5de65c-e5ae-4dcc-90e1-87e958a32c0e",
+    "userName": "Test",
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test@zenlabs.work",
+    "status": "active",
+    "attributes": [
+      {
+        "name": "sample_attribute_0",
+        "value": "sample_attribute_value_0"
+      }
+    ],
+    "apps": []
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "proxies": [
+    {
+      "name": "AK-authentication-proxy"
+    }
+  ],
+  "sharedflows": []
+}

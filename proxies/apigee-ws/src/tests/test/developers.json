@@ -1,0 +1,26 @@
+[
+  {
+    "attributes": [
+      {
+        "name": "sample_attribute_0",
+        "value": "sample_attribute_value_0"
+      }
+    ],
+    "email": "tyler.ayers@gmail.com",
+    "userName": "tayers",
+    "firstName": "Tyler",
+    "lastName": "Ayers"
+  },
+  {
+    "attributes": [
+      {
+        "name": "sample_attribute_0",
+        "value": "sample_attribute_value_0"
+      }
+    ],
+    "email": "test@zenlabs.work",
+    "userName": "Test",
+    "firstName": "Test",
+    "lastName": "User"
+  }
+]
