@@ -1,0 +1,7 @@
+apiVersion: apigeeregistry/v1
+kind: API
+metadata:
+  name: coffee-api
+  data:
+    displayName: Coffee API
+    description: Coffee API for browsing and ordering coffee
