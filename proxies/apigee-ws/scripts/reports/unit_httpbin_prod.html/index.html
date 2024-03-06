@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test Report</title>
+    <style>
+        body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: #ff0288;
+    font-size: 2.5rem;
+}
+
+.summary {
+    margin: 32px 0 32px 0;
+    font-size: 1.25rem;
+}
+
+.date {
+    margin-bottom: 20px;
+}
+
+td {
+    padding: 4px 8px 4px 0;
+}
+
+thead {
+    font-weight: bold;
+}
+
+.success, .success a {
+    color: green;
+}
+
+.failure, .failure a {
+    color: red;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #19191c;
+        color: #c2c2c2;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Report</h2>
+    <div class="summary">
+        <div class="date">Wed, 6 Mar 2024 17:15:25 +0100</div>
+        <div class="count">Executed: 1 (100%)</div>
+        <div class="count">Succeeded: 1 (100.0%)</div>
+        <div class="count">Failed: 0 (0.0%)</div>
+    </div>
+    <table>
+        <thead>
+        <td>File</td>
+        <td>Status</td>
+        <td>Start Time</td>
+        <td>Duration</td>
+        </thead>
+        <tbody>
+        <tr class="success" data-duration="756" data-status="success" data-filename="../tests/test1_prod.hurl" data-id="280e42e0-ef6c-47d9-8529-071098a51df7" data-timestamp="1709741724">
+    <td><a href="store/280e42e0-ef6c-47d9-8529-071098a51df7-timeline.html">../tests/test1_prod.hurl</a></td>
+    <td>success</td>
+    <td>2024-03-06T16:15:24+01:00</td>
+    <td>0.756</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

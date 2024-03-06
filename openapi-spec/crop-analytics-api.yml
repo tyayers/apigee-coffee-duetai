@@ -1,0 +1,332 @@
+openapi: 3.0.0
+info:
+  title: Crop Analytics API
+  description: API for managing crop analytics data.
+  version: 1.0.0
+paths:
+  /entities:
+    get:
+      description: Retrieve a list of entities.
+      operationId: getEntities
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Entity'
+                type: array
+          description: List of entities.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal server error.
+      tags:
+        - entities
+    post:
+      description: Creates a new entity.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entity'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+          description: Entity created successfully.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal server error.
+      summary: Create a new entity.
+      tags:
+        - entities
+  /entities/{entity}:
+    delete:
+      description: Delete an entity by its unique identifier.
+      operationId: deleteEntity
+      responses:
+        '204':
+          description: Entity deleted successfully.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Entity not found.
+      summary: Delete a specific entity.
+      tags:
+        - entities
+    get:
+      description: >-
+        This endpoint retrieves the details of a specific entity. The entity is
+        identified by its unique identifier.
+      operationId: getEntityById
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+          description: The details of the entity.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The entity was not found.
+      summary: Retrieve the details of a specific entity.
+      tags:
+        - entities
+    parameters:
+      - description: The unique identifier of the entity.
+        in: path
+        name: entity
+        required: true
+        schema:
+          type: string
+    put:
+      description: >-
+        Updates the details of a specific entity. The entity must exist in the
+        system.
+      operationId: updateEntity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entity'
+        description: The updated details of the entity.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+          description: The updated entity details.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The specified entity does not exist.
+      summary: Update the details of a specific entity.
+      tags:
+        - entities
+  /entities/{entity}/data:
+    get:
+      description: >-
+        This endpoint retrieves the data associated with a specific entity. The
+        data can be filtered by date range and other criteria.
+      operationId: getEntityData
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Data'
+                type: array
+          description: Successful operation.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Entity not found.
+      summary: Retrieve the data associated with a specific entity.
+      tags:
+        - entities
+    parameters:
+      - description: The unique identifier of the entity.
+        in: path
+        name: entity
+        required: true
+        schema:
+          type: string
+    post:
+      description: Creates a new data point for the specified entity.
+      operationId: createEntityData
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Data'
+        description: The data to be created.
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Data'
+          description: Data created successfully.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Entity not found.
+      summary: Create new data for a specific entity.
+      tags:
+        - entities
+  /entities/{entity}/data/{data}:
+    delete:
+      description: Delete a specific data point.
+      operationId: deleteEntitiesEntityDataData
+      parameters:
+        - description: The unique identifier of the data point.
+          in: path
+          name: data
+          required: true
+          schema:
+            $ref: '#/components/schemas/Data'
+      responses:
+        '200':
+          description: OK
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+      summary: Delete a specific data point.
+      tags:
+        - entities
+    get:
+      description: Retrieve the details of a specific data point.
+      operationId: getEntityData1
+      parameters:
+        - description: Unique identifier for the data point.
+          in: path
+          name: data
+          required: true
+          schema:
+            $ref: '#/components/schemas/Data'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Data'
+          description: Successful response.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Entity or data point not found.
+      summary: Retrieve the details of a specific data point.
+      tags:
+        - entities
+    parameters:
+      - description: Unique identifier for the entity.
+        in: path
+        name: entity
+        required: true
+        schema:
+          $ref: '#/components/schemas/Entity'
+      - description: Unique identifier for the data point.
+        in: path
+        name: data
+        required: true
+        schema:
+          $ref: '#/components/schemas/Data'
+    put:
+      operationId: updateEntityData
+      parameters:
+        - in: path
+          name: data
+          required: true
+          schema:
+            $ref: '#/components/schemas/Data'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Data'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Data'
+          description: Data updated successfully.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Entity or data not found.
+      summary: Update the details of a specific data point.
+      tags:
+        - entities
+components:
+  schemas:
+    Data:
+      description: Data point associated with an entity.
+      properties:
+        id:
+          description: Unique identifier for the data point.
+          type: string
+        timestamp:
+          description: Timestamp of the data point.
+          type: string
+        value:
+          description: Value of the data point.
+          type: number
+      type: object
+    Entity:
+      description: An entity represents a crop or a field.
+      properties:
+        description:
+          description: Description of the entity.
+          type: string
+        id:
+          description: Unique identifier for the entity.
+          type: string
+        name:
+          description: Name of the entity.
+          type: string
+      type: object
+    Error:
+      description: Error object
+      properties:
+        code:
+          description: Error code
+          type: string
+        message:
+          description: Error message
+          type: string
+      type: object

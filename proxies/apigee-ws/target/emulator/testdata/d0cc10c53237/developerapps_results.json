@@ -1,7 +1,7 @@
 [
   {
     "name": "MobileApp",
-    "appId": "dc575ffc-af73-42e0-93ea-55a8e5de2694",
+    "appId": "ef7c7113-8d62-4b8a-b527-f3a70dcc6b47",
     "callbackUrl": "",
     "status": "approved",
     "attributes": [
@@ -12,8 +12,8 @@
     ],
     "credentials": [
       {
-        "consumerKey": "nGt2ye7sbYxd3H2KrGtzg0NkTavn6JCs",
-        "consumerSecret": "pOMA9URG9iGcWZIz",
+        "consumerKey": "PwrHA7kdtVHVG0fr9Jy9RmMvZO1VhpXf",
+        "consumerSecret": "EAf1dodiaqvFVSuJ",
         "apiProducts": [
           {
             "apiproduct": "HTTPBin",
@@ -23,7 +23,7 @@
         "status": "approved",
         "attributes": [],
         "scopes": [],
-        "issuedAt": 1707405043342,
+        "issuedAt": 1709739441068,
         "expiresAt": -1
       }
     ],

@@ -1,14 +1,13 @@
 ## accept purchase orders for specialized cofee beans through web api  
-openapi: 3.0.3
+openapi: 3.0.0
 info:
   title: Coffee Beans Purchase Order API
-  contact: {}
   description: >-
     This API allows you to create and manage purchase orders for specialized
     coffee beans.
   version: 1.0.0
 servers:
-  - url: https://api.34-110-134-67.nip.io/coffeeservice
+  - url: https://purchase-order-api.34-110-134-67.nip.io/apihub-llm-purchase-order-api
 components:
   schemas:
     PurchaseOrder:
@@ -31,26 +30,24 @@ components:
           example: pending
         customerId:
           type: string
+          required: true
           description: The ID of the customer who placed the purchase order.
         coffeeBeanId:
           type: string
+          required: true
           description: The ID of the type of coffee bean that is being purchased.
         quantity:
           type: integer
+          required: false
           default: 1
           description: The quantity of coffee beans that are being purchased.
         unitPrice:
           type: number
+          required: true
           description: The unit price of the coffee beans.
         totalPrice:
           type: number
           description: The total price of the purchase order.
-      required:
-        - customerId
-        - coffeeBeanId
-        - quantity
-        - unitPrice
-        - totalPrice
     CoffeeBean:
       type: object
       properties:

@@ -14,5 +14,21 @@
       "HTTPBin"
     ],
     "expiryType": "never"
+  },
+  {
+    "attributes": [
+      {
+        "name": "sample_attribute_0",
+        "value": "sample_attribute_value_0"
+      }
+    ],
+    "developerEmail": "tyler.ayers@gmail.com",
+    "name": "testapp",
+    "displayName": "testapp",
+    "callbackUrl": "",
+    "apiProducts": [
+      "HTTPBin"
+    ],
+    "expiryType": "never"
   }
 ]

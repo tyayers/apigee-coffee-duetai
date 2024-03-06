@@ -1,0 +1,188 @@
+openapi: 3.0.0
+info:
+  title: Delivery Scheduling API
+  description: This API provides the ability to manage delivery scheduling for purchases.
+  version: 1.0.0
+paths:
+  /deliveries:
+    get:
+      description: List all scheduled deliveries.
+      operationId: getDeliveries
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Delivery'
+                type: array
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      tags:
+        - deliveries
+    post:
+      description: Creates a new scheduled delivery for a purchase.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Delivery'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Delivery'
+          description: The scheduled delivery was created successfully.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The request was invalid.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: An unexpected error occurred.
+      summary: Create a new scheduled delivery.
+      tags:
+        - deliveries
+  /deliveries/{deliveryId}:
+    delete:
+      operationId: deleteDelivery
+      responses:
+        '204':
+          description: The scheduled delivery was deleted successfully.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The scheduled delivery with the specified ID does not exist.
+      summary: Delete a specific scheduled delivery.
+      tags:
+        - deliveries
+    get:
+      description: >-
+        This endpoint allows you to retrieve the details of a specific scheduled
+        delivery by its unique identifier.
+      operationId: getDeliveryById
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Delivery'
+          description: The details of the scheduled delivery.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The scheduled delivery with the specified ID does not exist.
+      summary: Get the details of a specific scheduled delivery.
+      tags:
+        - deliveries
+    parameters:
+      - description: The unique identifier of the scheduled delivery.
+        in: path
+        name: deliveryId
+        required: true
+        schema:
+          type: string
+    put:
+      description: >-
+        Updates the details of a specific scheduled delivery. The deliveryId
+        path parameter is required.
+      operationId: updateDelivery
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Delivery'
+        description: The updated details of the scheduled delivery.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Delivery'
+          description: The updated scheduled delivery details.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request. The request body is invalid.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not found. The specified scheduled delivery does not exist.
+      summary: Update the details of a specific scheduled delivery.
+      tags:
+        - deliveries
+components:
+  schemas:
+    Delivery:
+      description: A scheduled delivery for a purchase.
+      properties:
+        deliveryAddress:
+          description: The address where the delivery is scheduled to occur.
+          type: string
+        deliveryId:
+          description: The unique identifier of the scheduled delivery.
+          type: string
+        deliveryStatus:
+          description: The current status of the scheduled delivery.
+          type: string
+        purchaseId:
+          description: >-
+            The unique identifier of the purchase associated with the scheduled
+            delivery.
+          type: string
+        scheduledDeliveryDate:
+          description: The date and time when the delivery is scheduled to occur.
+          type: string
+      type: object
+    Error:
+      description: An error response from the API.
+      properties:
+        errorMessage:
+          description: A human-readable description of the error.
+          type: string
+      type: object
