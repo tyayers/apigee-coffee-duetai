@@ -1,0 +1,159 @@
+openapi: 3.0.0
+info:
+  title: Furniture Replacement Parts API
+  description: >-
+    This API provides a way to manage product information for furniture
+    replacement parts within the kitchen segment.
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      description: Get a list of products.
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Product'
+                type: array
+          description: A list of products.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: An error occurred.
+      tags:
+        - products
+    post:
+      description: Creates a new product.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: Product created successfully.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal server error.
+      summary: Create a new product.
+      tags:
+        - products
+  /products/{productId}:
+    delete:
+      operationId: deleteProduct
+      responses:
+        '200':
+          description: Product deleted successfully.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Product not found.
+      summary: Delete a specific product.
+      tags:
+        - products
+    get:
+      description: Get the details of a specific product.
+      operationId: getProductById
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: Successful operation.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Product not found.
+      tags:
+        - products
+    parameters:
+      - in: path
+        name: productId
+        required: true
+        schema:
+          type: string
+    put:
+      operationId: updateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+        description: Product object that needs to be updated.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: Product updated successfully.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid product supplied.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Product not found.
+      summary: Update the details of a specific product.
+      tags:
+        - products
+components:
+  schemas:
+    Error:
+      description: An error object.
+      properties:
+        code:
+          description: The error code.
+          type: string
+        message:
+          description: The error message.
+          type: string
+      type: object
+    Product:
+      description: A product for furniture replacement parts within the kitchen segment.
+      properties:
+        description:
+          description: A description of the product.
+          type: string
+        name:
+          description: The name of the product.
+          type: string
+        price:
+          description: The price of the product.
+          type: number
+        productId:
+          description: The unique identifier of the product.
+          type: string
+        quantity:
+          description: The quantity of the product in stock.
+          type: integer
+      type: object

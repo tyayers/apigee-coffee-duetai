@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../tests/test1_local.hurl</title>
+    <style>
+        body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4:target {
+    color: #ff0288;
+}
+
+table {
+    display: block;
+    font-size: 15px;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+th, td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+}
+
+th {
+    padding: 6px 8px;
+    text-align: left;
+    background: #f5f5f5;
+}
+
+td {
+    padding: 6px 8px;
+    vertical-align: text-top;
+}
+
+.name {
+    width: 120px;
+    font-weight: bold;
+    background: #fbfafd;
+}
+
+.value {
+    width: 800px;
+    word-break: break-all
+}
+
+details {
+    margin-bottom: 20px;
+}
+
+summary {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #19191c;
+        color: #c2c2c2;
+    }
+
+    th, td {
+        border-color: #444;
+    }
+
+    th, table tr:nth-child(2n) {
+        background-color: #27272c;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #19191c;
+    }
+
+    .name {
+        background-color: #19191c;
+    }
+}
+
+        .report-nav {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.report-nav-links {
+    display: flex;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.report-nav a {
+    color: royalblue;
+    margin-right: 20px;
+}
+
+.report-nav a[aria-selected="true"] {
+    color: #ff0288;
+}
+
+.report-nav-summary > div {
+    display: flex;
+}
+
+.report-nav-summary .item-name {
+    min-width: 100px;
+    font-weight: bold;
+}
+
+.error {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-left: red 4px solid;
+}
+
+.error-desc {
+    background: #f5f5f5;
+}
+
+.error-desc pre {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin: 0.75rem;
+    padding: 0.8rem;
+    overflow-x: auto;
+}
+
+.error-desc pre code {
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.success, .success a {
+    color: green;
+}
+
+.failure, .failure a {
+    color: red;
+}
+
+@media (prefers-color-scheme: dark) {
+    .report-nav a {
+        color: #34a7ff;
+    }
+
+    .report-nav a[aria-selected="true"] {
+        color: #ff0288;
+    }
+
+    .error-desc {
+        background: #27272c;
+    }
+}
+
+    </style>
+<body>
+<div>
+    <div class="container">
+        <div class="report-nav">
+    <div class="report-nav-links">
+        <div><a href="../index.html">Report</a></div>
+        <div><a aria-selected="false" href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-timeline.html">Timeline</a></div>
+        <div><a aria-selected="true" href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-run.html">Run</a></div>
+        <div><a aria-selected="false" href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-source.html">Source</a></div>
+    </div>
+    <div class="report-nav-summary">
+        <div><div class="item-name">File:</div><div><a href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-source.html">../tests/test1_local.hurl</a></div></div>
+        <div><div class="item-name">Status:</div><div><span class="failure">Failure</span></div></div>
+        <div><div class="item-name">Duration:</div><div>53 ms</div></div>
+        <div><div class="item-name">Errors:</div><div>2</div></div>
+        <div></div>
+    </div>
+    <div class="errors"><div class="error"><div class="error-desc"><pre><code>Assert status code
+  --> <a href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-source.html#l10">../tests/test1_local.hurl:10:6</a>
+   |
+10 | HTTP 200
+   |      ^^^ actual value is <503>
+   |</code></pre></div></div><div class="error"><div class="error-desc"><pre><code>Assert status code
+  --> <a href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-source.html#l17">../tests/test1_local.hurl:17:6</a>
+   |
+17 | HTTP 201
+   |      ^^^ actual value is <503>
+   |</code></pre></div></div></div>
+</div>
+
+        <details open><summary>Entry 1</summary><h4 id="e1:c1">Call 1</h3><table><thead><tr><th colspan="2">General</tr></th></thead><tbody><tr><td class="name">Request URL</td><td class="value"><a href="http://localhost:8998/httpbin2/get">http://localhost:8998/httpbin2/get</a></td></tr><tr><td class="name">Request Method</td><td class="value">GET</td></tr><tr><td class="name">Version</td><td class="value">HTTP/1.1</td></tr><tr><td class="name">Status code</td><td class="value">401</td></tr><tr><td class="name">Source</td><td class="value"><a href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-source.html#l1">../tests/test1_local.hurl:1</a></td></tr></tbody></table><table><thead><tr><th colspan="2">Request Headers</tr></th></thead><tbody><tr><td class="name">Accept</td><td class="value">*/*</td></tr><tr><td class="name">Host</td><td class="value">localhost:8998</td></tr><tr><td class="name">User-Agent</td><td class="value">hurl/4.2.0</td></tr><tr><td class="name">x-app</td><td class="value">MY_APP</td></tr></tbody></table><table><thead><tr><th colspan="2">Response Headers</tr></th></thead><tbody><tr><td class="name">Content-Length</td><td class="value">150</td></tr><tr><td class="name">Content-Type</td><td class="value">application/json</td></tr><tr><td class="name">X-Apigee-environment</td><td class="value">test</td></tr><tr><td class="name">X-Apigee-fault-code</td><td class="value">steps.oauth.v2.FailedToResolveAPIKey</td></tr><tr><td class="name">X-Apigee-fault-flag</td><td class="value">false</td></tr><tr><td class="name">X-Apigee-fault-flow</td><td class="value">PreFlow</td></tr><tr><td class="name">X-Apigee-fault-policy</td><td class="value">oauthV2/verify-api-key</td></tr><tr><td class="name">X-Apigee-fault-revision</td><td class="value">/organizations/hybrid/environments/dev/apiproxies/AK-authentication-proxy/revisions/0</td></tr><tr><td class="name">X-Apigee-fault-source</td><td class="value">policy</td></tr><tr><td class="name">X-Apigee-Message-ID</td><td class="value">76d5dcb2-d62f-4698-9ae3-5395be831a4031</td></tr><tr><td class="name">X-Apigee-organization</td><td class="value">hybrid</td></tr><tr><td class="name">X-Apigee-proxy</td><td class="value">/organizations/hybrid/environments/dev/apiproxies/AK-authentication-proxy/revisions/0</td></tr><tr><td class="name">X-Apigee-proxy-basepath</td><td class="value">/httpbin2</td></tr><tr><td class="name">X-Apigee-Tracking-ID</td><td class="value">3e5c28d2-ca8b-4a4a-bf97-18978caf1983</td></tr><tr><td class="name">x-request-id</td><td class="value"></td></tr></tbody></table></details><details open><summary>Entry 2</summary><h4 id="e2:c1">Call 1</h3><table><thead><tr><th colspan="2">General</tr></th></thead><tbody><tr><td class="name">Request URL</td><td class="value"><a href="http://localhost:8998/httpbin2/get?apikey=38xu1h3QUugsEe4ctIsrhYcpPYnkrJcY">http://localhost:8998/httpbin2/get?apikey=38xu1h3QUugsEe4ctIsrhYcpPYnkrJcY</a></td></tr><tr><td class="name">Request Method</td><td class="value">GET</td></tr><tr><td class="name">Version</td><td class="value">HTTP/1.1</td></tr><tr><td class="name">Status code</td><td class="value">503</td></tr><tr><td class="name">Source</td><td class="value"><a href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-source.html#l8">../tests/test1_local.hurl:8</a></td></tr></tbody></table><table><thead><tr><th colspan="2">Request Headers</tr></th></thead><tbody><tr><td class="name">Accept</td><td class="value">*/*</td></tr><tr><td class="name">Host</td><td class="value">localhost:8998</td></tr><tr><td class="name">User-Agent</td><td class="value">hurl/4.2.0</td></tr><tr><td class="name">x-app</td><td class="value">MY_APP</td></tr></tbody></table><table><thead><tr><th colspan="2">Response Headers</tr></th></thead><tbody><tr><td class="name">Content-Length</td><td class="value">161</td></tr><tr><td class="name">Content-Type</td><td class="value">application/json</td></tr><tr><td class="name">X-Apigee-environment</td><td class="value">test</td></tr><tr><td class="name">X-Apigee-fault-code</td><td class="value">protocol.http.NoResolvedHost</td></tr><tr><td class="name">X-Apigee-fault-flag</td><td class="value">false</td></tr><tr><td class="name">X-Apigee-fault-policy</td><td class="value">null/null</td></tr><tr><td class="name">X-Apigee-fault-revision</td><td class="value">/organizations/hybrid/environments/dev/apiproxies/AK-authentication-proxy/revisions/0</td></tr><tr><td class="name">X-Apigee-fault-source</td><td class="value">target</td></tr><tr><td class="name">X-Apigee-Message-ID</td><td class="value">76d5dcb2-d62f-4698-9ae3-5395be831a4032</td></tr><tr><td class="name">X-Apigee-organization</td><td class="value">hybrid</td></tr><tr><td class="name">X-Apigee-proxy</td><td class="value">/organizations/hybrid/environments/dev/apiproxies/AK-authentication-proxy/revisions/0</td></tr><tr><td class="name">X-Apigee-proxy-basepath</td><td class="value">/httpbin2</td></tr><tr><td class="name">X-Apigee-Tracking-ID</td><td class="value">41cca2dc-facb-482f-be43-74a2e91c73c8</td></tr><tr><td class="name">x-request-id</td><td class="value"></td></tr></tbody></table></details><details open><summary>Entry 3</summary><h4 id="e3:c1">Call 1</h3><table><thead><tr><th colspan="2">General</tr></th></thead><tbody><tr><td class="name">Request URL</td><td class="value"><a href="http://localhost:8998/coffeeservice/coffee-beans">http://localhost:8998/coffeeservice/coffee-beans</a></td></tr><tr><td class="name">Request Method</td><td class="value">GET</td></tr><tr><td class="name">Version</td><td class="value">HTTP/1.1</td></tr><tr><td class="name">Status code</td><td class="value">503</td></tr><tr><td class="name">Source</td><td class="value"><a href="cb22a483-8ec8-4fcc-b4a0-54f6cbf170dc-source.html#l16">../tests/test1_local.hurl:16</a></td></tr></tbody></table><table><thead><tr><th colspan="2">Request Headers</tr></th></thead><tbody><tr><td class="name">Accept</td><td class="value">*/*</td></tr><tr><td class="name">Host</td><td class="value">localhost:8998</td></tr><tr><td class="name">User-Agent</td><td class="value">hurl/4.2.0</td></tr></tbody></table><table><thead><tr><th colspan="2">Response Headers</tr></th></thead><tbody><tr><td class="name">Content-Length</td><td class="value">188</td></tr><tr><td class="name">Content-Type</td><td class="value">application/json</td></tr><tr><td class="name">X-Apigee-environment</td><td class="value">test</td></tr><tr><td class="name">X-Apigee-fault-code</td><td class="value">protocol.http.NoResolvedHost</td></tr><tr><td class="name">X-Apigee-fault-flag</td><td class="value">false</td></tr><tr><td class="name">X-Apigee-fault-policy</td><td class="value">null/null</td></tr><tr><td class="name">X-Apigee-fault-revision</td><td class="value">/organizations/hybrid/environments/dev/apiproxies/CoffeePurchasing-v1/revisions/0</td></tr><tr><td class="name">X-Apigee-fault-source</td><td class="value">target</td></tr><tr><td class="name">X-Apigee-Message-ID</td><td class="value">76d5dcb2-d62f-4698-9ae3-5395be831a4033</td></tr><tr><td class="name">X-Apigee-organization</td><td class="value">hybrid</td></tr><tr><td class="name">X-Apigee-proxy</td><td class="value">/organizations/hybrid/environments/dev/apiproxies/CoffeePurchasing-v1/revisions/0</td></tr><tr><td class="name">X-Apigee-proxy-basepath</td><td class="value">/coffeeservice</td></tr><tr><td class="name">X-Apigee-Tracking-ID</td><td class="value">ccb44972-6f15-4e38-8c37-772550a09d7f</td></tr><tr><td class="name">x-request-id</td><td class="value"></td></tr></tbody></table></details>
+    </div>
+</div>
+</body>
+</html>
