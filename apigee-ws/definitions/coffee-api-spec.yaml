@@ -1,0 +1,14 @@
+apiVersion: apigeeregistry/v1
+kind: Spec
+metadata:
+  name: openapi
+  parent: apis/coffee-api/versions/v1
+  labels:
+    openapi-verified: "true"
+  annotations:
+    linters: spectral,gnostic
+data:
+  filename: openapi.yaml
+  description: OpenAPI description of the Coffee API
+  mimeType: application/x.openapi+gzip;version=3
+  sourceURI: https://raw.githubusercontent.com/tyayers/apigee-coffee-duetai/main/apigee-ws/specs/openapi_spec_apigee.yaml

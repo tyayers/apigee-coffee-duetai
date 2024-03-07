@@ -2,7 +2,7 @@ apiVersion: apigeeregistry/v1
 kind: ScoreCard
 metadata:
   name: scorecard-manual
-  parent: apis/coffee/versions/v1/specs/openapi
+  parent: apis/coffee-api/versions/v1/specs/openapi
 data:
   displayName: Subjective Scores
   description: Human-assigned scores (subjective)
