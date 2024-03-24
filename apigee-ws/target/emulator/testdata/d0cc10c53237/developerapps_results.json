@@ -1,7 +1,7 @@
 [
   {
     "name": "MobileApp",
-    "appId": "5a67bc65-edd5-4d4c-ac25-c2faafecaa51",
+    "appId": "d7b5b840-c3c9-4be0-a141-0fc6db7f1a24",
     "callbackUrl": "",
     "status": "approved",
     "attributes": [
@@ -12,8 +12,8 @@
     ],
     "credentials": [
       {
-        "consumerKey": "38xu1h3QUugsEe4ctIsrhYcpPYnkrJcY",
-        "consumerSecret": "yOAZcQpPguS1Itag",
+        "consumerKey": "XTrTPxNH3ZY83DF03GyevpVlmNDm1Pi4",
+        "consumerSecret": "GtFd5zEdw6ua2bSV",
         "apiProducts": [
           {
             "apiproduct": "HTTPBin",
@@ -23,7 +23,7 @@
         "status": "approved",
         "attributes": [],
         "scopes": [],
-        "issuedAt": 1709755965784,
+        "issuedAt": 1711172282703,
         "expiresAt": -1
       }
     ],
@@ -33,7 +33,7 @@
   },
   {
     "name": "testapp",
-    "appId": "23c500ec-4ccf-4854-b0fd-9f446303ab3f",
+    "appId": "9519157d-b5ff-4e3f-afe8-a2815a586a15",
     "callbackUrl": "",
     "status": "approved",
     "attributes": [
@@ -44,8 +44,8 @@
     ],
     "credentials": [
       {
-        "consumerKey": "qdCdIN5FGjS0tRhTGGUgozytWpJbz9TT",
-        "consumerSecret": "bevE0SV4QxFKWtNH",
+        "consumerKey": "NFtFeuAiB1f688HOSjy1GFXOhFAcD3JT",
+        "consumerSecret": "akjpITaAYwOriz9i",
         "apiProducts": [
           {
             "apiproduct": "HTTPBin",
@@ -55,7 +55,7 @@
         "status": "approved",
         "attributes": [],
         "scopes": [],
-        "issuedAt": 1709755965861,
+        "issuedAt": 1711172282759,
         "expiresAt": -1
       }
     ],

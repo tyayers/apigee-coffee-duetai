@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite tests="1" errors="3" failures="0"><testcase id="../tests/test1_local.hurl" name="../tests/test1_local.hurl" time="0.001"><error>HTTP connection
+  --> ../tests/test1_local.hurl:1:5
+   |
+ 1 | GET http://localhost:8998/httpbin2/get
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ (7) Failed to connect to localhost port 8998: Connection refused
+   |</error><error>HTTP connection
+  --> ../tests/test1_local.hurl:8:5
+   |
+ 8 | GET http://localhost:8998/httpbin2/get?apikey=38xu1h3QUugsEe4ctIsrhYcpPYnkrJcY
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ (7) Failed to connect to localhost port 8998: Connection refused
+   |</error><error>HTTP connection
+  --> ../tests/test1_local.hurl:16:5
+   |
+16 | GET http://localhost:8998/coffeeservice/coffee-beans
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ (7) Failed to connect to localhost port 8998: Connection refused
+   |</error></testcase></testsuite></testsuites>
